@@ -1,0 +1,15 @@
+extends layout 
+
+block content 
+    h2 New message
+    form(method='POST' action='/new')
+        div.form-group
+            label(for='name') Name 
+            input(type='text' placeholder='Name' name='name' minlength='1')
+        div.form-group
+            label(for='message') Message 
+            textarea(type='text' placeholder='Message' name='message' minlength='1' rows='5' resize='none')
+        button(type="submit") Submit
+        
+    
+    
