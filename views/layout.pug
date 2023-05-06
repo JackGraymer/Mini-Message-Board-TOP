@@ -3,5 +3,11 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+  body(id='body')
+    nav(class='nav')  
+      h1 Messageboard
+      div(class='links')
+        a(href='/') Home    
+        a(href='/new') New message
+    div(class='main')
+      block content

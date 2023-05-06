@@ -1,8 +1,121 @@
+*, html{
+  box-sizing: border-box;
+}
+
+html{
+  display: flex;
+  justify-content: center;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  width: clamp(500px, 80%, 1000px);
+  background-color: #ddd;
+  color: #222;
+  margin: 0;
+  font: 14px Helvetica, sans-serif, Arial;
+}
+
+body>*{
+  padding: 1em;
+}
+
+.nav{
+  background-color: #00B7FF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: larger;
+  gap: 2em;
+}
+
+.links{
+  display: flex;
+  gap: 1em;
+}
+.main{
 }
 
 a {
+  border-radius: 0.5em;
+  text-align: center;
   color: #00B7FF;
+  padding: 1em;
+  text-decoration: none;
+  background-color: aliceblue;
 }
+a:hover {
+  color: #0d1113;
+  background-color: aliceblue;
+}
+
+h1{
+  margin: 0;
+}
+
+.messages{
+  display: grid;
+  gap: 1em;
+}
+
+.post{
+  background-color: #eee;
+  display: grid;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 1em;
+}
+
+.username{
+  font-weight: bold;}
+
+.message{
+  padding: 1em;}
+
+.date{
+  font-size: small;
+  text-align: right;}
+
+.post>p{
+  margin: 0;
+ }
+
+ form{
+  display: grid;
+  gap: 1em;
+  align-self: center;
+ }
+
+ form>div{
+  display: grid;
+ }
+
+ label{
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5em;
+ }
+
+ input, textarea{
+  padding: 0.5em;
+  border-radius: 0.5em;
+  border: 1px solid #ddd;
+  font: inherit;
+ }
+
+ button{
+  justify-self: center;
+  font-size: large;
+  font-weight: bolder;
+  width: fit-content;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  border: 1px solid #ddd;
+  background-color: #00B7FF;
+  color: white;
+  cursor: pointer;
+ }
+
+ button:hover{
+  color: #0d1113;
+ }
