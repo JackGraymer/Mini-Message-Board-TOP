@@ -1,33 +1,24 @@
 const express = require("express");
+const Messages = require("../models/message");
 const router = express.Router();
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", async function (req, res, next) {
+  const messages = await Messages.find().sort({ date: -1 });
+  console.log(messages);
   res.render("index", { title: "Latest messages", messages: messages });
 });
 
 router.post("/new", function (req, res, next) {
-  //messages.push(req.body.name);
-  messages.unshift({
-    text: req.body.message,
+  const newMessage = new Messages({
     user: req.body.name,
+    message: req.body.message,
     added: new Date(),
-  });
-  console.log(messages);
+  }).save();
+
   res.redirect("/");
 });
 
-const messages = [
-  {
-    text: "Hi there!",
-    user: "Amando",
-    added: new Date(),
-  },
-  {
-    text: "Hello World!",
-    user: "Charles",
-    added: new Date(),
-  },
-];
-
+const allmessages = Messages.findOne();
+console.log(allmessages);
 module.exports = router;

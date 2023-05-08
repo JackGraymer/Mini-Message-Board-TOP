@@ -7,6 +7,6 @@ block content
     each message in messages
       div.post
         p.username= message.user + ": "
-        p.message= message.text
-        p.date= message.added.toDateString()
+        p.message= message.message
+        p.date= message.date.toLocaleString()
         
