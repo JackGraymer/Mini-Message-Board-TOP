@@ -4,6 +4,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+var mongoose = require("mongoose");
 
 /* const { MongoClient, ServerApiVersion } = require("mongodb");
 
@@ -41,12 +42,12 @@ var newRouter = require("./routes/new");
 var app = express();
 
 // Set up mongoose connection
-const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 const mongoDB = `mongodb+srv://jackgraymer:${process.env.PASSWORD}@cluster0.sohmtw9.mongodb.net/?retryWrites=true&w=majority`;
 
 main().catch((err) => console.log(err));
 async function main() {
+  console.log("Connecting to MongoDB...");
   await mongoose.connect(mongoDB);
   console.log("Connected to MongoDB");
 }
